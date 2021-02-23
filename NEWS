@@ -1,0 +1,35 @@
+Changes in version 1.2.0
+
+   * Addition of the in.window() function, that computes efficiently which data
+   points in time-series fall in specific windows, even with irregular
+   sampling rate
+   * Improvement of multigons() and multilines() with mapply() rather than
+   'for' loops
+
+Changes in version 1.1.2
+
+   * Removal of the welcome message (I got tired of it)
+   * Debugging and optimising the pointsvg() function
+   * Improving personalisation of the nlegend() function (& slight debugging)
+
+Changes in version 1.1.1
+
+   * Adaptation for R 4.0
+   * Addition of the nset() function, that allows among others to take a fixed
+   number of repeated succesive measurements of samples (i.e. replicates in
+   successive lines in a data table), and reorganise them (for instance take the
+   lines of 5 replicates of measurements, and reorganise them in 5 columns),
+   typically to average them.
+   * Addition of the pkgfind() functions, that allows to find a character
+   pattern in the code of functions in an entire package.
+   * Addition of a new set of functions to in fine compare sedimentation rates
+   between sections correlated by tie-point. The strat.repair() function, among
+   others is added to remove instantaneous deposits (e.g. turbidites) and add
+   thickness estimated to be lost (i.e. hiatuses). This is still in development.
+   * Fixed bug in are.lim.distinct() and shift()
+
+Changes in version 1.1.0
+
+   * Update to dplyr 1.0.0: fixed bug with tie.lim(),
+     suppression of the mat.lag() and mat.lead() functions
+     made obsolete by dplyr::lag() and dplyr::lead() now usable on matrices
