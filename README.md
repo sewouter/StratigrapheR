@@ -2,6 +2,10 @@
 Integrated Straigraphy for R
 "# StratigrapheR" 
 
-Run the following code to import the package:
+Run the following code to import the package (devtools package necessary):
 
-install_github("sewouter/StratigrapheR")
+devtools::install_github("sewouter/StratigrapheR")
+
+To import devtools: 
+
+install.packages("devtools")
