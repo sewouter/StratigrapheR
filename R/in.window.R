@@ -97,7 +97,7 @@ in.window <- function(x, w, xout = unique(x), b = "[]", warn = 100,...)
     stop("The 'w' parameter should be numeric or integer")
   }
 
-  if(!(inherits(xout, "inumeric") | inherits(xout, "integer"))){
+  if(!(inherits(xout, "numeric") | inherits(xout, "integer"))){
     stop("The 'xout' parameter should be numeric or integer")
   }
 
@@ -348,7 +348,7 @@ in.window <- function(x, w, xout = unique(x), b = "[]", warn = 100,...)
 
   # Merge two data sets, add details ----
 
-  end.i <- cbind(accu.low[,rev(seq_len(ncol(accu.high))[-(1:4)])],
+  end.i <- cbind(accu.low[,rev(seq_len(ncol(accu.low))[-(1:4)])],
                  accu.high[,-c(1,2,4)])
 
   end.i <- as.matrix(end.i)

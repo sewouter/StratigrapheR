@@ -21,7 +21,7 @@
 #'
 #' Type: R package
 #'
-#' Version: 1.2.0 (February 2020)
+#' Version: 1.2.1 (End February 2020)
 #'
 #' License: GPL-3
 #' @note
