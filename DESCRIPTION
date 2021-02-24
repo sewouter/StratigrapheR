@@ -1,7 +1,7 @@
 Package: StratigrapheR
 Type: Package
 Title: Integrated Stratigraphy
-Version: 1.2.0
+Version: 1.2.1
 Author: Sebastien Wouters [aut, cre], Adam D. Smith [ctb]
 Maintainer: Sebastien Wouters <sebastien.wouters@doct.uliege.be>
 Description: Includes bases for litholog generation: graphical functions
