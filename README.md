@@ -2,5 +2,6 @@
 Integrated Straigraphy for R
 "# StratigrapheR" 
 
-Run the following code to import the pacakge
+Run the following code to import the package:
+
 install_github("sewouter/StratigrapheR")
