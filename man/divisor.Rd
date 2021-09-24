@@ -13,7 +13,7 @@ is.divisor(x, y, tolerance = 8, relative = T, use.names = T)
 \item{x}{a numeric or integer vector}
 
 \item{tolerance}{the order of tolerance for errors, i.e. the number of
-decimals considered as being significative}
+decimals considered as being meaningful}
 
 \item{relative}{whether to apply the tolerance to the x values divided by
 the smallest x value (TRUE, is the default), or to the x values themselves}

@@ -15,7 +15,8 @@ weldlog(
   add.dt = 0,
   omit1 = NULL,
   omit2 = NULL,
-  warn = T
+  warn = T,
+  tolerance = 8
 )
 }
 \arguments{
@@ -49,6 +50,9 @@ beds in the original log)}
 
 \item{warn}{whether you want to be annoyed (beginners should find it
 useful to be annoyed)}
+
+\item{tolerance}{the order of tolerance for errors, i.e. the number of
+decimals considered as being meaningful for matching dt to log}
 }
 \value{
 a "litholog()"-like data frame, with new bed boundaries
