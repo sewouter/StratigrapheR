@@ -24,6 +24,8 @@
 #' beds in the original log)
 #' @param warn whether you want to be annoyed (beginners should find it
 #' useful to be annoyed)
+#' @param tolerance the order of tolerance for errors, i.e. the number of
+#' decimals considered as being meaningful for matching dt to log
 #' @return a "litholog()"-like data frame, with new bed boundaries
 #' @seealso Complementary function\code{\link{litholog}}
 #'
@@ -58,10 +60,12 @@
 #' @importFrom stats approx
 #' @export
 
+
 weldlog <- function(log, dt, seg, j = 1:length(dt),
                     col.xy = 1, col.dt = 2,
                     auto.dt = T, add.dt = 0,
-                    omit1 = NULL, omit2 = NULL, warn = T)
+                    omit1 = NULL, omit2 = NULL, warn = T,
+                    tolerance = 8)
 {
 
   # Security and arguments preprocessing ----
@@ -214,7 +218,21 @@ weldlog <- function(log, dt, seg, j = 1:length(dt),
 
     sxylim <- c(min(sxy), max(sxy))
 
-    b  <- as.character(unique(log[which(log$dt == boundary),]$i))
+    identification  <- log$dt == boundary
+
+    sorted.intervals <- sort(unique(log$dt))
+
+    treshold <- min(abs(sorted.intervals - lag(sorted.intervals)), na.rm = T) *
+      10^(-tolerance)
+
+    identification <- abs(log$dt - boundary) < treshold
+
+    if(length(which(identification)) == 0){
+      warning("The dt value ", boundary,
+              " is not found as a bed boundary in the log.")
+    }
+
+    b  <- as.character(unique(log[which(identification),]$i))
 
     # Work each bed related to the boundary
 
@@ -307,7 +325,9 @@ weldlog <- function(log, dt, seg, j = 1:length(dt),
 
           # Checking and welding ----
 
-          pos <- which(accu$i == nabk & accu$dt == boundary)
+          identification2 <- abs(accu$dt - boundary) < treshold
+
+          pos <- which(accu$i == nabk & identification2)
 
           if(accu[pos[1],]$xy == s[1,]$xy){
 
@@ -338,5 +358,4 @@ weldlog <- function(log, dt, seg, j = 1:length(dt),
   return(accu)
 
 }
-
 

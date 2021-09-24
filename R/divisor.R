@@ -6,7 +6,7 @@
 #' @param x a numeric or integer vector
 #' @param y a numeric or integer vector of vales to be tested as divisors of x
 #' @param tolerance the order of tolerance for errors, i.e. the number of
-#' decimals considered as being significative
+#' decimals considered as being meaningful
 #' @param relative whether to apply the tolerance to the x values divided by
 #' the smallest x value (TRUE, is the default), or to the x values themselves
 #' @param tries the amount of iterations: each iteration tests 10^n+1 more

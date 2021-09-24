@@ -30,7 +30,7 @@ seq_mult <- function(l, mult, inv = FALSE)
 
   ll <- length(as.vector(l))
 
-  if(ll != 1) l <- ll
+  if(ll != 1 | !(inherits(l, "integer") | inherits(l, "numeric"))) l <- ll
 
   ratio <- l/mult
 
